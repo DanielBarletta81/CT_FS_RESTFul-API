@@ -25,7 +25,7 @@ members_schema = MemberSchema(many=True)
 
 def get_db_connection():
 
-    db_name = "fitness_center_db"
+    db_name = "Gym_Members"
     user = "root"
     password = "Babinz2023!"
     host = "localhost"
