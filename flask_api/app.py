@@ -244,7 +244,7 @@ def add_a_session():
      cursor = conn.cursor(dictionary=True)
 # 
      new_session = (session_data["session_id"], session_data["member_id"], session_data["session_date"] , session_data["session_time"], session_data["activity"])
-     query = 'INSERT INTO sessions(id, name, age) VALUES (%s, %s, %s, %s, %s)'
+     query = 'INSERT INTO WorkoutSessions(id, name, age) VALUES (%s, %s, %s, %s, %s)'
 
      cursor.execute(query, new_session)
 
@@ -277,8 +277,8 @@ def update_session(session_id):
         return jsonify({"error": "Database connection failed."}), 500
      #set up cursor
      cursor = conn.cursor(dictionary=True)
-# set variable to hold member info for update
-     updated_session = (session_data["session_id"], session_data["member_id"], session_data["session_date"] , session_data["session_time"], session_data["activity"], id)
+# set variable to hold session info for update
+     updated_session = (session_data["session_id"], session_data["member_id"], session_data["session_date"] , session_data["session_time"], session_data["activity"], session_id)
      query = 'UPDATE WorkoutSessions SET session_id = %s, member_id = %s, session_date = %s, session_time = %s, activity = %s WHERE session_id= %s'
 
      cursor.execute(query, updated_session)
