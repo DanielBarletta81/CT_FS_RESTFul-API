@@ -185,7 +185,7 @@ class SessionSchema(ma.Schema):
     session_id = fields.Integer(required=True)
     member_id = fields.Integer(required=True)
     session_date = fields.Date(required=True)
-    session_time = fields.DateTime(required=True)
+    session_time = fields.String(required=True)
     activity = fields.String()
     
 
